@@ -1,7 +1,8 @@
-import SignaturePad from 'signature_pad';
-var signaturePad = new signaturePad(document.getElementById('Signature-pad'), {
-  backgroundColor: 'rgba(255, 255, 255, 0)',
-  penColor: 'rgb(0, 0, 0)'
+document.addEventListener('DOMContentLoaded', () => {
+  const signaturePad = new SignaturePad(document.getElementById('signature-pad'), {
+    backgroundColor: 'rgba(255, 255, 255, 0)',
+    penColor: 'rgb(0, 0, 0)'
+  });
 });
 var saveButton = document.getElementById('save');
 var cancelButton = document.getElementById('clear');
