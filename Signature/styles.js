@@ -18,7 +18,10 @@ async function saveSignatureToGoogleDrive() {
   const signatureFile = signaturesFolder.createFile(signatureImageBlob, 'signature.png');
 
   // Save the file
-  signatureFile.save();
+  const saved = await signatureFile.save();
+
+  // Return the saved status
+  return saved;
 }
 
 // Bind the save button to the saveSignatureToGoogleDrive function
@@ -28,5 +31,13 @@ var cancelButton = document.getElementById('clear');
 
 cancelButton.addEventListener('click', function (event) {
   signaturePad.clear();
+
+const saved = await saveSignatureToGoogleDrive();
+
+if (saved) {
+  alert('The signature was saved successfully.');
+} else {
+  alert('There was an error saving the signature.');
+}
 });
 });
