@@ -13,7 +13,7 @@ async function saveSignatureToGoogleDrive() {
   const signatureImageBlob = new Blob([signatureImageData]);
 
 
-  const signaturesFolder = DriveApp.createFolder('1wCuq1FCTx5hX7VfDpOUQ2Veo0GR8iXFf');
+  const signaturesFolder = DriveApp.getFolderById('1wCuq1FCTx5hX7VfDpOUQ2Veo0GR8iXFf');
   
   const signatureFile = signaturesFolder.createFile(signatureImageBlob, 'signature.png');
 
