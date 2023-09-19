@@ -18,7 +18,7 @@ async function saveSignatureToGoogleDrive() {
   const signatureFile = signaturesFolder.createFile(signatureImageBlob, 'signature.png');
 
   // Save the file
-  const saved = await signatureFile.save();
+    const saved = await signatureFile.save();
 
   // Return the saved status
   return saved;
